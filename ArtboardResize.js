@@ -41,3 +41,10 @@ doc.artboards[0].artboardRect = [ableft, abtop, abright, abbottom];
 
 // align group center of artboard
 groupItems.position = [ableft, abtop]
+
+// remove empty layers after grouping
+for (var j=doc.layers.length-1;j>=0;j--){
+    if (doc.layers[j].pageItems.length==0) {
+        doc.layers[j].remove()
+    }
+}
